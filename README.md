@@ -31,6 +31,26 @@ python3 lanceur_nettoyage_mail.py
 
 Le navigateur s’ouvrira automatiquement.
 
+## Premier lancement sur un autre Mac
+
+Deux cas simples :
+
+1. Si le dossier a ete recupere avec `git clone`
+
+- le double-clic sur `Lancer Nettoyage Mail.command` fonctionne en general mieux
+
+2. Si le dossier vient d'un zip GitHub
+
+- macOS peut bloquer le fichier `.command` a cause de la quarantaine
+- dans ce cas, ouvrez Terminal dans le dossier du projet et lancez :
+
+```bash
+xattr -dr com.apple.quarantine .
+./"Lancer Nettoyage Mail.command"
+```
+
+Si `python3` n'est pas trouve, le lanceur affiche un message d'erreur explicite.
+
 ## Flux conseillé
 
 1. Choisir l’année et le mois
